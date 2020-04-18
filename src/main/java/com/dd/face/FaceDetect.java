@@ -32,7 +32,7 @@ public class FaceDetect {
          String param = GsonUtils.toJson(map);
          
          // 注意这里仅为了简化编码每一次请求都去获取access_token，线上环境access_token有过期时间， 客户端可自行缓存，过期后重新获取。
-         String accessToken = "[24.4645b6d3e8e85e55237f0b3ac696e171.2592000.1589608312.282335-19445894]";
+         String accessToken = AuthService.getAuth();
          
          String result = HttpUtil.post(url, accessToken, "application/json", param);
          System.out.println(result);
